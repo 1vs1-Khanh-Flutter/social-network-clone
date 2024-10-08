@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello/singup.dart';
 
 void main() {
   runApp(const login());
@@ -21,12 +22,12 @@ class _MyAppState extends State<login> {
           child: Column(
             children: [
               Image.asset(
-                'assets/images/1.jpg',
+                'assets/images/Background.png',
               ),
               Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.fromLTRB(10, 80, 10, 2),
+                    padding: EdgeInsets.fromLTRB(35, 10, 35, 2),
                     child: TextField(
                       keyboardType: TextInputType.text,
                       style: TextStyle(fontSize: 25, color: Colors.black),
@@ -36,7 +37,7 @@ class _MyAppState extends State<login> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    padding: EdgeInsets.fromLTRB(35, 0, 35, 0),
                     child: TextField(
                       keyboardType: TextInputType.text,
                       style: TextStyle(fontSize: 25, color: Colors.black),
@@ -51,7 +52,7 @@ class _MyAppState extends State<login> {
                 margin: EdgeInsets.symmetric(
                   vertical: 30,
                 ),
-                width: double.infinity,
+                width: 350,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.blue,
@@ -79,7 +80,7 @@ class _MyAppState extends State<login> {
                     )),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/images/rachngang.png'),
                   Text('Hoặc',
@@ -94,13 +95,18 @@ class _MyAppState extends State<login> {
                 margin: EdgeInsets.symmetric(
                   vertical: 30,
                 ),
-                width: double.infinity,
+                width: 350,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.green,
                 ),
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => singup()),
+                      );
+                    },
                     child: Text(
                       'Tạo tài khoản Facebook mới',
                       style: TextStyle(
