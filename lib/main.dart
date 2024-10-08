@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 import 'package:template_test/src/presentation/pages/home_page.dart';
 import 'package:template_test/src/presentation/pages/sign_in_page.dart';
 import 'package:template_test/src/presentation/pages/sign_up_page.dart';
 import 'package:template_test/src/presentation/pages/splash_page.dart';
 
-void main() {
+Future main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  await Future.delayed(const Duration(seconds: 10));
+  FlutterNativeSplash.remove();
+  
   runApp(const MyApp());
 }
 
